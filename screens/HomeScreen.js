@@ -46,7 +46,7 @@ export default class HomeScreen extends React.Component {
     }
   };
 
-  pickImage= async () => {
+  pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       allowsEditing: true,
       aspect: [4, 3],
@@ -96,8 +96,8 @@ export default class HomeScreen extends React.Component {
           }
 
           await db.collection('users').doc(this.state.email).update({ online: true })
-          
-          if(this.state.name) {
+
+          if (this.state.name) {
             await db.collection('users').doc(this.state.email).update({ name: this.state.name })
           }
           console.log("avatar upload: ", result)
